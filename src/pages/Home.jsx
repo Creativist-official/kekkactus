@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 import Title from '../components/Title';
-import HomePlant from '../components/HomePlant';
+import HomePlant from '../components/home/HomePlant';
+import DailyTips from '../components/home/DailyTips';
 
 const Content = styled.div`
 `;
@@ -48,10 +49,11 @@ const Home = ({}) => {
                <SvgWave viewBox="0 0 397 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M397 9.075C353.5 65 94.8734 -5.36156e-06 0 0V99H397V9.075Z" fill="#FFEEE4"/>
                </SvgWave>
+               <HomePlant img="./Immaginepianta.png" type="Cactus" name="Cyntia"/>
             </RelativeContainer>
          </HeaderContainer>
          <Content>
-            <HomePlant />
+            <DailyTips />
          </Content>
 
       </HomeContainer>
