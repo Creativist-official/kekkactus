@@ -31,10 +31,10 @@ const Header = ({leftIcon, rightIcon}) => {
   return (
     <HeaderContainer>
       <GiftDiv>
-        <Icon icon={leftIcon} color="white" width="40"/>
+        <Icon icon={leftIcon} color="white" width="35"/>
         <GiftNum>3</GiftNum>
       </GiftDiv>
-      <Icon icon={rightIcon} color="white" width="40"/>
+      <Icon icon={rightIcon} color="white" width="35"/>
     </HeaderContainer>
   )
 }
