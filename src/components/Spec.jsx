@@ -8,14 +8,15 @@ const Container = styled.div`
     display: flex;
     flex-basis: 50%;
     margin-bottom: 2%;
+    align-items: center;
     `;
 
 const ImageSpec = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     border-radius: 15px;
     background-color: ${props => props.color};
     `;
