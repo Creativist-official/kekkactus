@@ -14,7 +14,7 @@ const ContainerOnda = styled.div`
 const Logo = styled.img`
   position: absolute;
   bottom: -50px;
-  left: 35%;
+  left: calc((100% - 150px)/2);
   width: 150px;
   box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
