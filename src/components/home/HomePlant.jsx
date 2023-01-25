@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types'
 
 const PlantContainer = styled.div`
     display: flex;
@@ -122,5 +123,13 @@ const HomePlant = ({type, name, img}) => {
 
   )
 }
+
+HomePlant.propTypes = {
+    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired
+}
+
+
 
 export default HomePlant;
