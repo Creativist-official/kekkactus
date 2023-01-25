@@ -33,4 +33,7 @@ const ChangePage = ({ register }) => {
   );
 };
 
+ChangePage.prototype = {
+  register: PropTypes.bool.isRequired,
+};
 export default ChangePage;

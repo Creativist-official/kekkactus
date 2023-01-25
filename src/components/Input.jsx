@@ -21,4 +21,8 @@ const Input = ({ placeholder, type }) => {
    return <InputS placeholder={placeholder} type={type} />;
 }
 
+Input.prototype = {
+    placeholder: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'email', 'password', "number", "date", "color"]).isRequired,
+}
 export default Input;

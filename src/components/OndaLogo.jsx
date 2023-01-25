@@ -62,4 +62,5 @@ const OndaLogo = () => {
   );
 };
 
+OndaLogo.prototype = {};
 export default OndaLogo;

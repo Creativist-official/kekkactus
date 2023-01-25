@@ -28,4 +28,10 @@ const Button = ({ children, onClick, type="button"}) => {
    return <ButtonS onClick={onClick} type={type}>{children}</ButtonS>
 }
 
+Button.prototype = {
+    children: PropTypes.element.isRequired,
+    onClick: PropTypes.func,
+    type: PropTypes.oneOf(['button', 'submit', 'reset'])
+}
+
 export default Button;
