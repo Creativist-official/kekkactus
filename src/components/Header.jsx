@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types'
+
 
 const HeaderContainer = styled.section`
     height: 100px;
@@ -11,28 +13,35 @@ const HeaderContainer = styled.section`
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
 `;
 
 const GiftNum = styled.span`
-    font-size: 35px;
+    font-size: 25px;
     font-family: ${({theme}) => theme.fonts.special};
     color: ${({theme}) => theme.colors.light};
-
 `;
 
-const Header = () => {
+const GiftDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Header = ({leftIcon, rightIcon}) => {
   return (
     <HeaderContainer>
-      <div>
-        <Icon icon="bx:gift" width="40"/>
+      <GiftDiv>
+        <Icon icon={leftIcon} color="white" width="40"/>
         <GiftNum>3</GiftNum>
-      </div>
-      <Icon icon="mdi:bell-badge-outline" width="40"/>
+      </GiftDiv>
+      <Icon icon={rightIcon} color="white" width="40"/>
     </HeaderContainer>
   )
+}
+
+Header.propTypes = {
+    leftIcon: PropTypes.string.isRequired,
+    rightIcon: PropTypes.string.isRequired,
 }
 
 export default Header;
