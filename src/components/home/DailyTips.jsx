@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import SingleTip from './SingleTip'
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
 
 const Container = styled.div`
   margin-top: 70px;
@@ -37,24 +35,24 @@ const DailyTips = () => {
       <Title>Daily Tips</Title>
       <TipRow>
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          slidesPerView={4}
           loop={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false
           }}
-          pagination={true} 
-          modules={[Pagination]}
         >
           <SwiperSlide>
-              <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067944960546066432/euphorbia-ingens-cactus-candelabro.png" text="Le rose" />
+              <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067944960546066432/euphorbia-ingens-cactus-candelabro.png" text="Le viole"/>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067944960546066432/euphorbia-ingens-cactus-candelabro.png" text="Le rose" />
+            <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067947250229186631/roselline-rosa-ramificate-fioraio-rimini-14727888568401_1200x1200_crop_center.png" text="Le roselline"/>
           </SwiperSlide>
           <SwiperSlide>
-            <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067944960546066432/euphorbia-ingens-cactus-candelabro.png" text="Le rose" />
+            <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067947681026150440/PTG-12st-rose-equador-fucsia-50cm-part2-700x700.png" text="Le rose"/>
+          </SwiperSlide>
+          <SwiperSlide>
+              <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067947985511653437/61yscoSoaIL.png" text="basilico"/>
           </SwiperSlide>
         </Swiper>
       </TipRow>
