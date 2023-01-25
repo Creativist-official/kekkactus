@@ -6,16 +6,17 @@ const Container = styled.div`
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    margin-bottom: 30px;
 
 `
 
 const TipDescription = styled.p`
     font-family: ${({theme}) => theme.fonts.normal};
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 800;
     margin: 0 auto;
     text-align: center;
-    width: 50%;
+    width: 70%;
 `
 
 const TipImg = styled.img`
@@ -25,11 +26,11 @@ const TipImg = styled.img`
     padding: 3px;
 `
 
-const SingleTip = () => {
+const SingleTip = ({text, image}) => {
   return (
     <Container>
-        <TipImg src="./icon-144x144.png" alt="" />
-        <TipDescription>Cacca di mucca fermentata</TipDescription>
+        <TipImg src={image} alt="tip image" />
+        <TipDescription>{text}</TipDescription>
     </Container>
   )
 }
