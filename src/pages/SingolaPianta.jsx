@@ -64,6 +64,18 @@ const Specs = styled.div`
     margin: 4%;
     `;
 
+const Calendar = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid ${props => props.theme.colors.gray};
+    `;
+
+const Card = styled.div`
+    display: flex;
+    `;
+
 const SingolaPianta = ({props}) => {
    return   <Container>
                 <div>Header che non c'è</div>
@@ -96,10 +108,10 @@ const SingolaPianta = ({props}) => {
                         colors={{bg: '#FCE9B8', icon: '#FFBD00'}}
                     />
                     <Spec
-                        icon="ph:sun-bold"
+                        icon="material-symbols:garden-cart"
                         title="Terreno"
                         value="Terriccio universale"
-                        colors={{bg: '#FFAA7A', icon: '#FFBD00'}}
+                        colors={{bg: '#FFAA7A', icon: '#733619'}}
                     />
                     <Spec
                         icon="material-symbols:nature"
@@ -114,7 +126,9 @@ const SingolaPianta = ({props}) => {
                         colors={{bg: '#6CB4DA', icon: '#0057FF'}}
                     />
                 </Specs>
-
+                <Calendar>
+                    <Card/>
+                </Calendar>
             </Container>
 }
 
