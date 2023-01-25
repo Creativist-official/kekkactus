@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const TipDescription = styled.p`
     font-family: ${({theme}) => theme.fonts.normal};
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
     margin: 0 auto;
     text-align: center;
