@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
+
 import logo from "../assets/logo.png";
 import foglieImage from "../assets/decorations/foglie.png";
 import cactusImage from "../assets/decorations/cactus.png";
