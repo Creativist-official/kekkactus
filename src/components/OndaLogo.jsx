@@ -31,6 +31,7 @@ const Foglie = styled.img`
   position: absolute;
   top: 50px;
   left: 0;
+  width: 100%;
 `;
 const Cactus = styled.img`
   position: absolute;
