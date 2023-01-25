@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import PropTypes from "prop-types";
 
 const navbarLinks = [
   { id: 1, to: "", text: "Home", icon: "material-symbols:home-rounded" },
@@ -77,4 +78,5 @@ const Navbar = () => {
   );
 };
 
+Navbar.prototype = {};
 export default Navbar;
