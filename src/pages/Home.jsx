@@ -5,6 +5,8 @@ import { Icon } from '@iconify/react';
 import Title from '../components/Title';
 import HomePlant from '../components/home/HomePlant';
 import DailyTips from '../components/home/DailyTips';
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Content = styled.div`
 `;
@@ -38,6 +40,10 @@ const RelativeContainer = styled.div`
    width: 100%;
 `
 
+const PlantSwiper = styled(Swiper)`
+   height: 200px;
+`
+
 const Home = ({}) => {
    return (
       <HomeContainer>
@@ -49,7 +55,17 @@ const Home = ({}) => {
                <SvgWave viewBox="0 0 397 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M397 9.075C353.5 65 94.8734 -5.36156e-06 0 0V99H397V9.075Z" fill="#FFEEE4"/>
                </SvgWave>
-               <HomePlant img="./Immaginepianta.png" type="Cactus" name="Cyntia"/>
+               <PlantSwiper
+                  slidesPerView={1}
+                  spaceBetween={10}
+               >
+                  <SwiperSlide>
+                     <HomePlant img="./Immaginepianta.png" type="Basilico" name="Cyntia"/>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                     <HomePlant img="https://media.discordapp.net/attachments/1067888696025677885/1068073214238015518/d6n8zrc-c8af5c6d-3ab6-4124-b63e-ab6bb72538c8.png?width=239&height=589" type="Cactus" name="Down"/>
+                  </SwiperSlide>
+               </PlantSwiper>
             </RelativeContainer>
          </HeaderContainer>
          <Content>
