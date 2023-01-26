@@ -38,6 +38,7 @@ const PlantCol = styled.div`
 
 const PlantImg = styled.img`
     width: 110px;
+    height: 180px;
 `
 
 const CupButton = styled.button`
@@ -80,31 +81,18 @@ const WaterTime = styled.span`
     
 `
 
+const SvgContainer = styled.svg`
+    box-shadow: 7px 5px 0px #000000, -4px 7px 0px #000000;
+
+`
+
 const HomePlant = ({type, name, img}) => {
   return (
     <PlantContainer>
         <RelativeContainer>
-            <svg width="100%" viewBox="0 0 321 176" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_dd_185_383)">
-            <path d="M101 2.20861C90.2 -1.79139 31.8333 0.54194 4 2.20861V168.209C17 161.709 58.5 160.709 82.5 165.209C106.5 169.709 152 162.209 196 165.209C240 168.209 247 164.209 270.5 165.209C289.3 166.009 307.333 167.542 314 168.209V2.20861C310 -2.7914 243 7.20862 226 7.20862C221 7.20862 171.751 4.8302 158.5 7.20862C139 10.7086 114.5 7.20861 101 2.20861Z" fill="#D5DBC2"/>
-            </g>
-            <defs>
-            <filter id="filter0_dd_185_383" x="0" y="0" width="321" height="175.209" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dx="-4" dy="7"/>
-            <feComposite in2="hardAlpha" operator="out"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_185_383"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-            <feOffset dx="7" dy="5"/>
-            <feComposite in2="hardAlpha" operator="out"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
-            <feBlend mode="normal" in2="effect1_dropShadow_185_383" result="effect2_dropShadow_185_383"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_185_383" result="shape"/>
-            </filter>
-            </defs>
-            </svg>
+            <SvgContainer width="100%" viewBox="0 0 310 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M97 2.20861C86.2 -1.79139 27.8333 0.54194 0 2.20861V168.209C13 161.709 54.5 160.709 78.5 165.209C102.5 169.709 148 162.209 192 165.209C236 168.209 243 164.209 266.5 165.209C285.3 166.009 303.333 167.542 310 168.209V2.20861C306 -2.7914 239 7.20862 222 7.20862C217 7.20862 167.751 4.8302 154.5 7.20862C135 10.7086 110.5 7.20861 97 2.20861Z" fill="#D5DBC2"/>
+            </SvgContainer>
         </RelativeContainer>
         <Content>
             <InfoCol>
