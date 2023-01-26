@@ -34,6 +34,9 @@ const InfoCol = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /*make this div bigger with the flex grow */
+    flex-grow: 1;
+     
 `
 
 const PlantName = styled.h2`
@@ -43,7 +46,29 @@ const PlantName = styled.h2`
     font-family: ${({theme}) => theme.fonts.normal};
 `
 
-const StatsDiv = styled.div``
+const StatsDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`
+
+const Row1 = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const Col1 = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+`
+
+const ImgDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const SinglePlant = () => {
   return (
@@ -54,14 +79,33 @@ const SinglePlant = () => {
             </BgSvg>
         </AbsoluteContainer>
         <Content>
-            <div>
+            <ImgDiv>
                 <PlantImg src="./Immaginepianta.png" alt="pianta bellissima" />
-            </div>
+            </ImgDiv>
             <InfoCol>
                 <PlantName>Cyntia</PlantName>
                 <h4>Cactus</h4>
                 <StatsDiv>
-
+                    <Row1>
+                        <Col1>
+                            <span>Altezza</span>
+                            <span>20cm</span>
+                        </Col1>
+                        <Col1>
+                            <span>Altezza</span>
+                            <span>20cm</span>
+                        </Col1>
+                    </Row1>
+                    <Row1>
+                        <Col1>
+                            <span>Altezza</span>
+                            <span>20cm</span>
+                        </Col1>
+                        <Col1>
+                            <span>Altezza</span>
+                            <span>20cm</span>
+                        </Col1>
+                    </Row1>
                 </StatsDiv>
             </InfoCol>
         </Content>
