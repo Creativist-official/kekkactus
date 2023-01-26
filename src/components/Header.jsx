@@ -46,7 +46,6 @@ Header.propTypes = {
     leftIcon: PropTypes.string.isRequired,
     rightIcon: PropTypes.string.isRequired,
     doubleSet: PropTypes.bool,
-    duobleIconRight: PropTypes.string.isRequired,
 }
 
 export default Header;
