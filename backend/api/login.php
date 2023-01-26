@@ -29,7 +29,7 @@ else{
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         sendResponse(422,'Email non valida!');
     }
-    else if(!controlliInput($password, 8)){
+    else if(strlen($password) < 8){
         sendResponse(422,'Password non valida!');
     }
     else{
