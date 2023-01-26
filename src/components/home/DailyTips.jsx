@@ -8,7 +8,7 @@ const Container = styled.div`
   margin-top: 70px;
   display: flex;
   flex-direction: column;
-  width: 94%;
+  width: 100%;
 `
 
 const Title = styled.h2`
@@ -23,10 +23,8 @@ const TipRow = styled.div`
   display: flex;
 `
 
-const SecondRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+const TipsSwiper = styled(Swiper)`
+  width: 100%;
 `
 
 const DailyTips = () => {
@@ -34,13 +32,15 @@ const DailyTips = () => {
     <Container>
       <Title>Daily Tips</Title>
       <TipRow>
-        <Swiper
+        <TipsSwiper
           slidesPerView={4}
           loop={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false
           }}
+          slidesOffsetAfter={20}
+          slidesOffsetBefore={20}
         >
           <SwiperSlide>
               <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067944960546066432/euphorbia-ingens-cactus-candelabro.png" text="Le viole"/>
@@ -54,7 +54,7 @@ const DailyTips = () => {
           <SwiperSlide>
               <SingleTip image="https://cdn.discordapp.com/attachments/1067888696025677885/1067947985511653437/61yscoSoaIL.png" text="basilico"/>
           </SwiperSlide>
-        </Swiper>
+        </TipsSwiper>
       </TipRow>
     </Container>
   )

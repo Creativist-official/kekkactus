@@ -16,7 +16,7 @@ const TipDescription = styled.p`
     font-weight: 800;
     margin: 0 auto;
     text-align: center;
-    width: 70%;
+    width: 100%;
 `
 
 const TipImg = styled.img`
