@@ -42,6 +42,7 @@ const RelativeContainer = styled.div`
 
 const PlantSwiper = styled(Swiper)`
    height: 200px;
+   width: 100%;
 `
 
 const Home = ({}) => {
