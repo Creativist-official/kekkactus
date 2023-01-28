@@ -27,12 +27,12 @@ const GiftDiv = styled.div`
     align-items: center;
 `;
 
-const Header = ({leftIcon, rightIcon, doubleSet, duobleIconRight}) => {
+const Header = ({leftIcon, rightIcon, doubleSet, duobleIconRight, num}) => {
   return (
     <HeaderContainer>
       <GiftDiv>
         <Icon icon={leftIcon} color="white" width="35"/>
-        <GiftNum>3</GiftNum>
+        <GiftNum>{num}</GiftNum>
       </GiftDiv>
       <div>
         {doubleSet && <Icon icon={duobleIconRight} color="white" width="35"/>}
@@ -47,6 +47,7 @@ Header.propTypes = {
     rightIcon: PropTypes.string.isRequired,
     doubleSet: PropTypes.bool,
     duobleIconRight: PropTypes.string.isRequired,
+    num: PropTypes.number.isRequired
 }
 
 export default Header;
