@@ -5,11 +5,20 @@ import Spec from '../components/Spec';
 import InfoesCard from '../components/InfoesCard';
 import Data from '../components/Data';
 import Button from '../components/Button';
+import Header from '../components/Header';
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     background-color: ${props => props.theme.colors.bgLight};
+    `;
+
+const HeaderContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #034A3D;
     `;
 
 const FotoPianta = styled.div`
@@ -149,7 +158,14 @@ const ButtonContainer = styled.div`
 
 const SingolaPianta = ({props}) => {
    return   <Container>
-                <div>Header che non c'è</div>
+                <HeaderContainer>
+                    <Header
+                    leftIcon = "material-symbols:arrow-back-ios-rounded"
+                    rightIcon = "mdi:dots-vertical"
+                    doubleSet
+                    duobleIconRight = "clarity:image-gallery-solid"
+                    />
+                </HeaderContainer>
                 <FotoPianta>
                     <img src="/pianta1.png" alt="Foto pianta" />
                     <svg viewBox="0 0 393 27" fill="none" xmlns="http://www.w3.org/2000/svg">
