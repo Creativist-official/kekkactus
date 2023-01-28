@@ -19,6 +19,7 @@ const HeaderContainer = styled.div`
     align-items: center;
     width: 100%;
     background-color: #034A3D;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     `;
 
 const FotoPianta = styled.div`
