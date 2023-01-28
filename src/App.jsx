@@ -15,7 +15,10 @@ const App = () => {
         <OnlyMobile>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/piante" element={<SingolaPianta />} />
               <Route path="*" element={<h1>404</h1>} />
             </Routes>
           </BrowserRouter>
