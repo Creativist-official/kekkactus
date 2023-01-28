@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import Spec from '../components/Spec';
 import InfoesCard from '../components/InfoesCard';
 import Data from '../components/Data';
+import Button from '../components/Button';
 
 const Container = styled.div`
     display: flex;
@@ -107,6 +108,7 @@ const QeA = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 5%;
+    padding-bottom: 80px;
     width: 100%;
     border-top: 1px solid ${props => props.theme.colors.gray};
     & h3{
@@ -130,6 +132,18 @@ const QeA = styled.div`
         & p{
             margin-right: 3%;
         }
+    }
+`;
+
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    & *{
+        width: 80%;
     }
 `;
 
@@ -218,6 +232,9 @@ const SingolaPianta = ({props}) => {
                         <Icon width={26} color="#000" icon="material-symbols:arrow-forward-ios-rounded" />
                     </div>
                 </QeA>
+                <ButtonContainer>
+                    <Button>HO INNAFFIATO</Button>
+                </ButtonContainer>
             </Container>
 }
 
