@@ -55,6 +55,7 @@ else{
                     $headerPayload = saveToken($token);
                     sendResponse(200, "Login effettuato con successo", [
                         "token" => $headerPayload,
+                        "type"=> "utente",
                         "attributes" => [
                             "email" => $row['email'], 
                             "nome" => $row['nome'], 
@@ -91,14 +92,14 @@ function saveToken($token){
     setcookie("signature", $signature, [
         'expires' => time() + 3600,
         'path' => '/',
-        'secure' => true, //TODO:
+        'secure' => false, //TODO:
         'httponly' => true,
         'samesite' => 'Strict',
     ]);
 
     return $headerPayload;
 }
-?>
 //https://web.dev/samesite-cookies-explained/
 //https://ideneal.medium.com/securing-authentication-in-a-spa-using-jwt-token-the-coolest-way-ab883bc372b6
 //https://medium.com/lightrail/getting-token-authentication-right-in-a-stateless-single-page-application-57d0c6474e3
+?>
