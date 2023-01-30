@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Icon } from '@iconify/react';
 
 const BgSvg = styled.svg`
     box-shadow: 7px 5px 0px #000000, -4px 5px 0px #000000;
@@ -15,6 +16,7 @@ const Container = styled.div`
 const AbsoluteContainer = styled.div`
     position: absolute;
     top: 0;
+    left: 25px;
 `
 
 const Content = styled.div`
@@ -23,20 +25,18 @@ const Content = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 80px;
+    gap: 30px;
 `
 
 const PlantImg = styled.img`
-    width: 110px;
+    width: 140px;
 `
 
 const InfoCol = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    /*make this div bigger with the flex grow */
-    flex-grow: 1;
-     
+    flex-grow: 2;
+    justify-content: space-between;
 `
 
 const PlantName = styled.h2`
@@ -54,8 +54,9 @@ const StatsDiv = styled.div`
 
 const Row1 = styled.div`
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
+
 `
 
 const Col1 = styled.div`
@@ -70,11 +71,32 @@ const ImgDiv = styled.div`
     align-items: center;
 `
 
+const PlantType = styled.h3`
+    font-size: 20px;
+    font-weight: 600;
+    color: ${({theme}) => theme.colors.textDark};
+    font-family: ${({theme}) => theme.fonts.normal};
+`
+
+const PlantData = styled.h3`
+    font-size: 20px;
+    font-weight: 600;
+    color: ${({theme}) => theme.colors.textDark};
+    font-family: ${({theme}) => theme.fonts.normal};
+`
+
+const DataType = styled.h4`
+    font-size: 16px;
+    font-weight: 400;
+    color: ${({theme}) => theme.colors.textDark};
+    font-family: ${({theme}) => theme.fonts.normal};
+`
+
 const SinglePlant = () => {
   return (
     <Container>
         <AbsoluteContainer>
-            <BgSvg width="345" height="193" viewBox="0 0 345 193" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <BgSvg width="100vw" viewBox="0 0 345 193" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M100.161 190.468C87.7665 193.168 30.9758 192.367 0 190.468L0 1.34941C14.4677 8.75467 61.0265 -2.09183 87.9194 1.34941C114.629 4.76721 161.371 13.4953 213.677 4.76721C262.268 -3.34088 260.976 1.34941 296.589 1.34941C317.525 1.34941 337.581 2.10893 345 1.34941L345 190.468C340.548 196.165 315.508 190.468 296.589 190.468C277.669 190.468 231.484 195.274 205.331 190.468C183.629 186.481 126.315 184.772 100.161 190.468Z" fill="#C2DBD7"/>
             </BgSvg>
         </AbsoluteContainer>
@@ -84,26 +106,30 @@ const SinglePlant = () => {
             </ImgDiv>
             <InfoCol>
                 <PlantName>Cyntia</PlantName>
-                <h4>Cactus</h4>
+                <PlantType>Cactus</PlantType>
                 <StatsDiv>
                     <Row1>
+                        <Icon width="24" icon="material-symbols:water-drop" />
                         <Col1>
-                            <span>Altezza</span>
-                            <span>20cm</span>
+                            <PlantData>1m</PlantData>
+                            <DataType>Altezza</DataType>
                         </Col1>
+                        <Icon width="24" icon="material-symbols:monitor-heart" />
                         <Col1>
-                            <span>Altezza</span>
-                            <span>20cm</span>
+                            <PlantData>10gg</PlantData>
+                            <DataType>Età</DataType>
                         </Col1>
                     </Row1>
                     <Row1>
+                        <Icon width="24" icon="material-symbols:water-drop" />
                         <Col1>
-                            <span>Altezza</span>
-                            <span>20cm</span>
+                            <PlantData>10 L</PlantData>
+                            <DataType>Acqua salata</DataType>
                         </Col1>
+                        <Icon width="24" icon="material-symbols:calendar-today" />
                         <Col1>
-                            <span>Altezza</span>
-                            <span>20cm</span>
+                            <PlantData>Oggi</PlantData>
+                            <DataType>Ultima innaffiata</DataType>
                         </Col1>
                     </Row1>
                 </StatsDiv>
