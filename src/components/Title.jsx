@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Icon } from '@iconify/react';
 
 const TitlePage = styled.h1`
     font-size: 36px;
@@ -18,14 +19,26 @@ const TitleContainer = styled.div`
     width: 90%;
     height: 100px;
     display: flex;
-    justify-content: left;
+    justify-content: ${icon => icon ? "space-between" : "left"};
     align-items: center;
+
 `;
 
-const Title = ({Title}) => {
+const IconContainer = styled.div`
+  background-color: ${({theme}) => theme.colors.primary};
+  padding: 10px;
+  border-radius: 10px;
+`
+
+const Title = ({Title, icon}) => {
   return (
     <TitleContainer>
       <TitlePage>{Title}</TitlePage>
+      {icon && 
+      <IconContainer>
+        <Icon icon="material-symbols:category-outline" width="30" color="white"/>
+      </IconContainer>
+      }
     </TitleContainer>
   )
 }
