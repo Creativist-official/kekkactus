@@ -6,6 +6,7 @@ import Garden from "./pages/Garden";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import NewPlant from "./pages/NewPlant";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
               <Route path="/register" element={<Register />} />
               <Route path="*" element={<h1>404</h1>} />
               <Route path="/garden" element={<Garden/>}/>
+              <Route path="/newPlant" element={<NewPlant/>}/>
             </Routes>
           </BrowserRouter>
         </OnlyMobile>
