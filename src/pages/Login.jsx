@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 import OndaLogo from "../components/OndaLogo";
 import Input from "../components/Input";
 import Button from "../components/Button";
