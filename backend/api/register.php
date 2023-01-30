@@ -62,6 +62,7 @@ else{
                 $query->execute();
 
                 sendResponse(201, "Registrazione avvenuta con successo", [
+                    "type" => "utente",
                     "attributes" => [
                         "email" => $email, 
                         "nome" => $name, 

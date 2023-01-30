@@ -13,10 +13,13 @@
     $user = $auth->isValid();
     if($user){
         sendResponse(200, "Utente", [
-            "email" => $user['email'],
-            "nome" => $user['nome'],
-            "cognome" => $user['cognome'],
-            "display_name" => $user['nome']." ".$user['cognome']
+            "type" => "utente",
+            "attributes" => [
+                "email" => $user['email'],
+                "nome" => $user['nome'],
+                "cognome" => $user['cognome'],
+                "display_name" => $user['nome']." ".$user['cognome']
+            ]
         ]);
     } else {
         sendResponse(401, "Token non valido");
