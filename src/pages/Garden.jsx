@@ -29,6 +29,55 @@ const TitleContainer = styled.div`
   padding-bottom: 12px;
 `
 
+const Plants = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  margin-bottom: 100px;
+`
+
+const plandata = [
+  {
+    watered: false,
+    name: "Caterina",
+    type: "Basilico",
+    height: "12cm",
+    age: "200y",
+    water: "20l",
+    last_water: "Oggi",
+  },
+  {
+    watered: false,
+    name: "Cyntia",
+    type: "Tronco",
+    height: "12cm",
+    age: "200y",
+    water: "20l",
+    last_water: "Oggi",
+  },
+  {
+    watered: false,
+    name: "Angelica",
+    type: "Erbe velenose",
+    height: "12cm",
+    age: "200y",
+    water: "20l",
+    last_water: "Oggi",
+  },
+  {
+    watered: false,
+    name: "Marzia",
+    type: "Pianta mortale",
+    height: "12cm",
+    age: "200y",
+    water: "20l",
+    last_water: "Oggi",
+  },
+]
+
 const Garden = () => {
   return (
     <Container>
@@ -43,7 +92,11 @@ const Garden = () => {
             </SvgWave>
           </RelativeContainer>
         </HeaderContainer>
-        <SinglePlant />
+        <Plants>
+          {plandata.map((plant) => {
+            return <SinglePlant watered={plant.watered} name={plant.name} type={plant.type} height={plant.height} age={plant.age} water={plant.water} last_water={plant.last_water}/>
+          })}
+        </Plants>
     </Container>
   )
 }
