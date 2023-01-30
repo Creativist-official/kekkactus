@@ -8,7 +8,7 @@ const navbarLinks = [
   { id: 1, to: "", text: "Home", icon: "material-symbols:home-rounded" },
   {
     id: 2,
-    to: "piante",
+    to: "Garden",
     text: "Giardino",
     icon: "material-symbols:potted-plant-outline",
   },
@@ -18,6 +18,7 @@ const navbarLinks = [
 ];
 
 const SNav = styled.nav`
+  z-index: 5;
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Title from '../components/Title'
 import Header from '../components/Header'
 import SinglePlant from '../components/garden/SinglePlant'
+import Navbar from '../components/Navbar'
 
 const Container = styled.div`
   background-color: ${({theme}) => theme.colors.bgLight};
@@ -97,6 +98,7 @@ const Garden = () => {
             return <SinglePlant watered={plant.watered} name={plant.name} type={plant.type} height={plant.height} age={plant.age} water={plant.water} last_water={plant.last_water}/>
           })}
         </Plants>
+        <Navbar/>
     </Container>
   )
 }

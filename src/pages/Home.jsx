@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import Title from '../components/Title';
 import HomePlant from '../components/home/HomePlant';
 import DailyTips from '../components/home/DailyTips';
+import Navbar from '../components/Navbar';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -72,9 +73,7 @@ const Home = ({}) => {
          <Content>
             <DailyTips />
          </Content>
-
-         <Navbar/>
-
+         <Navbar />
       </HomeContainer>
    )
 }
