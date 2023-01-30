@@ -8,5 +8,6 @@ function sendResponse($statusCode,$message,$extra = []){
 
     http_response_code($statusCode);
     echo json_encode($json);
-    die();
+    return;
 }
+?>
