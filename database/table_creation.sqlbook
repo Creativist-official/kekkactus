@@ -1,0 +1,66 @@
+-- SQLBook: Markup
+## Kekkactus
+### Creazione Database
+-- SQLBook: Code
+-- Active: 1627483707737@@127.0.0.1@3306
+CREATE DATABASE kekkactus;
+USE kekkactus;
+-- SQLBook: Markup
+### Creazione Tabelle
+-- SQLBook: Code
+CREATE TABLE utente (
+    email VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    cognome VARCHAR(50) NOT NULL,
+    dataCreazione DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (email)
+) ENGINE=InnoDB;
+
+CREATE TABLE categoria (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE dettaglio (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    idCategoria SMALLINT UNSIGNED NOT NULL,
+    nomeScientifico VARCHAR(50) NOT NULL,
+    nomeComune VARCHAR(50) NOT NULL,
+    descrizione VARCHAR(500),
+    fioritura VARCHAR(50) NOT NULL,
+    esposizione VARCHAR(50) NOT NULL,
+    ambiente VARCHAR(50) NOT NULL,
+    terreno VARCHAR(50) NOT NULL,
+    delayInnaffiatura INT NOT NULL DEFAULT 1,
+    image VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id, idCategoria),
+    FOREIGN KEY (idCategoria) REFERENCES categoria(id) ON DELETE NO ACTION
+) ENGINE=InnoDB;
+--- delayInnaffiatura 'In giorni'
+
+CREATE TABLE pianta (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    idDettaglio SMALLINT UNSIGNED NOT NULL,
+    idCategoria SMALLINT UNSIGNED NOT NULL,
+    nickname VARCHAR(50) NOT NULL,
+    dataNascita DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    image VARCHAR(100) NOT NULL,
+    altezza FLOAT UNSIGNED,
+    cure SMALLINT UNSIGNED NOT NULL DEFAULT 0,
+    PRIMARY KEY (id, email),
+    FOREIGN KEY (idDettaglio, idCategoria) REFERENCES dettaglio(id, idCategoria) ON DELETE CASCADE
+) ENGINE=InnoDB;
+--- cure 'Da sostituire prossimamente con una tabella malattie/cure'
+
+CREATE TABLE innaffiamento (
+    data DATETIME NOT NULL,
+    idPianta SMALLINT UNSIGNED NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    acquaUsata FLOAT UNSIGNED NOT NULL DEFAULT 200,
+    PRIMARY KEY (data, idPianta, email),
+    FOREIGN KEY (idPianta, email) REFERENCES pianta(id, email) ON DELETE CASCADE
+) ENGINE=InnoDB;
+--- acquaUsata 'In ml'

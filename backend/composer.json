@@ -1,0 +1,16 @@
+{
+    "name": "kekkactus/backend",
+    "description": "Backend for Kekkactus",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Jonathan Caputo",
+            "email": "jonathan-caputo@hotmail.com",
+            "role": "Full Stack Developer"
+        }
+    ],
+    "type": "project",
+    "require": {
+        "firebase/php-jwt": "^5.5"
+    }
+}
