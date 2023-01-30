@@ -73,6 +73,8 @@ const Home = ({}) => {
             <DailyTips />
          </Content>
 
+         <Navbar/>
+
       </HomeContainer>
    )
 }
