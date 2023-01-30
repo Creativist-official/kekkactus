@@ -22,20 +22,20 @@
                         if($user){
                             return $user;
                         } else {
-                            echo "utente non trovato";
-                            return false; //UTENTE NON TROVATO
+                            //echo "utente non trovato";
+                            return false;
                         }
                     } else {
-                        echo "token non valido";
-                        return false; //TOKEN NON VALIDO
+                        //echo "token non valido";
+                        return false;
                     }
                 }else{
-                    echo "manca la firma";
-                    return false; //MANCA LA FIRMA
+                    //echo "manca la firma";
+                    return false;
                 }
             }else{
-                echo "token non trasmesso";
-                return false; //TOKEN NON TRASMESSO
+                //echo "token non trasmesso";
+                return false;
             }
         }
 
