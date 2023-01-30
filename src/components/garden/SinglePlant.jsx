@@ -152,7 +152,7 @@ const SinglePlant = ({watered, name, type, height, age, water, last_water}) => {
                 <PlantType>{type}</PlantType>
                 <StatsDiv>
                     <Row1>
-                        <Icon width="24" icon="material-symbols:water-drop" />
+                        <Icon width="24" icon="ph:arrows-horizontal-bold" rotate={1} />
                         <Col1>
                             <PlantData>{height}</PlantData>
                             <DataType>Altezza</DataType>
