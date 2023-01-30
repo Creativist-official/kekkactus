@@ -25,7 +25,7 @@ const Content = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 `
 
 const PlantImg = styled.img`
@@ -37,6 +37,7 @@ const InfoCol = styled.div`
     flex-direction: column;
     flex-grow: 2;
     justify-content: space-between;
+    gap: 5px;
 `
 
 const PlantName = styled.h2`
@@ -49,14 +50,13 @@ const PlantName = styled.h2`
 const StatsDiv = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 `
 
 const Row1 = styled.div`
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-
+    gap: 10px;
 `
 
 const Col1 = styled.div`
@@ -79,17 +79,52 @@ const PlantType = styled.h3`
 `
 
 const PlantData = styled.h3`
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     color: ${({theme}) => theme.colors.textDark};
     font-family: ${({theme}) => theme.fonts.normal};
 `
 
 const DataType = styled.h4`
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     color: ${({theme}) => theme.colors.textDark};
     font-family: ${({theme}) => theme.fonts.normal};
+`
+
+const WateredBadge = styled.div`
+    width: 133px;
+    height: 37px;
+    background-color: ${({theme}) => theme.colors.primary};
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    transform: rotate(45deg);
+`
+
+const WateredText = styled.h4`
+    font-size: 15px;
+    font-weight: 900;
+    color: ${({theme}) => theme.colors.light};
+    font-family: ${({theme}) => theme.fonts.normal};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+`
+
+const BadgeContainer = styled.div`
+    position: relative;
+    bottom: 235px;
+    left: 294px;
+    width: 138px;
+    height: 157px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 `
 
 const SinglePlant = () => {
@@ -99,6 +134,11 @@ const SinglePlant = () => {
             <BgSvg width="100vw" viewBox="0 0 345 193" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M100.161 190.468C87.7665 193.168 30.9758 192.367 0 190.468L0 1.34941C14.4677 8.75467 61.0265 -2.09183 87.9194 1.34941C114.629 4.76721 161.371 13.4953 213.677 4.76721C262.268 -3.34088 260.976 1.34941 296.589 1.34941C317.525 1.34941 337.581 2.10893 345 1.34941L345 190.468C340.548 196.165 315.508 190.468 296.589 190.468C277.669 190.468 231.484 195.274 205.331 190.468C183.629 186.481 126.315 184.772 100.161 190.468Z" fill="#C2DBD7"/>
             </BgSvg>
+            <BadgeContainer>
+                <WateredBadge>
+                    <WateredText>INNAFFIATA</WateredText>
+                </WateredBadge>
+            </BadgeContainer>
         </AbsoluteContainer>
         <Content>
             <ImgDiv>
