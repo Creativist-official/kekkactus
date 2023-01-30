@@ -7,8 +7,8 @@ require __DIR__."/../classes/JWTHandler.php";
 
 putHeaders("POST");
 
-$db_connection = new Database();
-$conn = $db_connection->connect();
+$db = new Database();
+$conn = $db->connect();
 
 $data = json_decode(file_get_contents("php://input")); //Generico input (Senza passare da superglobali)
 
@@ -51,8 +51,10 @@ else{
                         'Kekkactus Server',
                         array("email" => $row['email'])
                     );
+
+                    $headerPayload = saveToken($token);
                     sendResponse(200, "Login effettuato con successo", [
-                        "token" => $token,
+                        "token" => $headerPayload,
                         "attributes" => [
                             "email" => $row['email'], 
                             "nome" => $row['nome'], 
@@ -74,3 +76,29 @@ else{
 
     }
 }
+
+function saveToken($token){
+    $partsToken = explode(".", $token);
+    $headerPayload = $partsToken[0].".".$partsToken[1];
+    $signature = $partsToken[2];
+
+    setcookie("token", $headerPayload, [
+        'expires' => time() + 3600,
+        'path' => '/',
+        'secure' => true,
+        'samesite' => 'Strict',
+    ]);
+    setcookie("signature", $signature, [
+        'expires' => time() + 3600,
+        'path' => '/',
+        'secure' => true, //TODO:
+        'httponly' => true,
+        'samesite' => 'Strict',
+    ]);
+
+    return $headerPayload;
+}
+?>
+//https://web.dev/samesite-cookies-explained/
+//https://ideneal.medium.com/securing-authentication-in-a-spa-using-jwt-token-the-coolest-way-ab883bc372b6
+//https://medium.com/lightrail/getting-token-authentication-right-in-a-stateless-single-page-application-57d0c6474e3
