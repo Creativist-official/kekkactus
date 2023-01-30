@@ -26,6 +26,10 @@ const SNav = styled.nav`
   position: fixed;
   bottom: 0;
   width: 100%;
+
+  & a {
+    text-decoration: none;
+  }
 `;
 const LinkContainer = styled.div`
   display: flex;
