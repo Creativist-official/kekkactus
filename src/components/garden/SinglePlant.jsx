@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types'
 
 const BgSvg = styled.svg`
     box-shadow: 7px 5px 0px #000000, -4px 5px 0px #000000;
@@ -127,48 +128,50 @@ const BadgeContainer = styled.div`
     overflow: hidden;
 `
 
-const SinglePlant = () => {
+const SinglePlant = ({watered, name, type, height, age, water, last_water}) => {
   return (
     <Container>
         <AbsoluteContainer>
             <BgSvg width="100vw" viewBox="0 0 345 193" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M100.161 190.468C87.7665 193.168 30.9758 192.367 0 190.468L0 1.34941C14.4677 8.75467 61.0265 -2.09183 87.9194 1.34941C114.629 4.76721 161.371 13.4953 213.677 4.76721C262.268 -3.34088 260.976 1.34941 296.589 1.34941C317.525 1.34941 337.581 2.10893 345 1.34941L345 190.468C340.548 196.165 315.508 190.468 296.589 190.468C277.669 190.468 231.484 195.274 205.331 190.468C183.629 186.481 126.315 184.772 100.161 190.468Z" fill="#C2DBD7"/>
             </BgSvg>
-            <BadgeContainer>
-                <WateredBadge>
-                    <WateredText>INNAFFIATA</WateredText>
-                </WateredBadge>
-            </BadgeContainer>
+            {!watered && 
+                <BadgeContainer>
+                    <WateredBadge>
+                        <WateredText>INNAFFIATA</WateredText>
+                    </WateredBadge>
+                </BadgeContainer>
+            }
         </AbsoluteContainer>
         <Content>
             <ImgDiv>
                 <PlantImg src="./Immaginepianta.png" alt="pianta bellissima" />
             </ImgDiv>
             <InfoCol>
-                <PlantName>Cyntia</PlantName>
-                <PlantType>Cactus</PlantType>
+                <PlantName>{name}</PlantName>
+                <PlantType>{type}</PlantType>
                 <StatsDiv>
                     <Row1>
                         <Icon width="24" icon="material-symbols:water-drop" />
                         <Col1>
-                            <PlantData>1m</PlantData>
+                            <PlantData>{height}</PlantData>
                             <DataType>Altezza</DataType>
                         </Col1>
                         <Icon width="24" icon="material-symbols:monitor-heart" />
                         <Col1>
-                            <PlantData>10gg</PlantData>
+                            <PlantData>{age}</PlantData>
                             <DataType>Età</DataType>
                         </Col1>
                     </Row1>
                     <Row1>
                         <Icon width="24" icon="material-symbols:water-drop" />
                         <Col1>
-                            <PlantData>10 L</PlantData>
-                            <DataType>Acqua salata</DataType>
+                            <PlantData>{water}</PlantData>
+                            <DataType>Acqua usata</DataType>
                         </Col1>
                         <Icon width="24" icon="material-symbols:calendar-today" />
                         <Col1>
-                            <PlantData>Oggi</PlantData>
+                            <PlantData>{last_water}</PlantData>
                             <DataType>Ultima innaffiata</DataType>
                         </Col1>
                     </Row1>
@@ -178,5 +181,17 @@ const SinglePlant = () => {
     </Container>
   )
 }
+
+SinglePlant.propTypes = {
+    watered: PropTypes.bool,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    height: PropTypes.string,
+    age: PropTypes.string,
+    water: PropTypes.string,
+    last_water: PropTypes.string
+}
+
+
 
 export default SinglePlant
