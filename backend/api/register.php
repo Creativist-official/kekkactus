@@ -3,12 +3,11 @@ require __DIR__."/../utils/headers.php";
 require __DIR__."/../utils/returnMessage.php";
 require __DIR__."/../utils/checkInputs.php";
 require __DIR__."/../classes/Database.php";
-require __DIR__."/../classes/JWTHandler.php";
 
 putHeaders("POST");
 
-$db_connection = new Database();
-$conn = $db_connection->connect();
+$db = new Database();
+$conn = $db->connect();
 
 $data = json_decode(file_get_contents("php://input")); //Generico input (Senza passare da superglobali)
 
@@ -17,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST"){
     sendResponse(405, "Metodo non consentito");
 }
 //Controllo se i campi sono vuoti
-else if(!isset($data->email) || !isset($data->password) || !isset($data->name) || !isset($data->surname) || empty($data->email) || empty($data->password) || empty($data->name) || empty($data->surname)){
+else if(!isset($data->email) || !isset($data->password) || !isset($data->name) || !isset($data->surname)){
     sendResponse(400, "Non hai inserito tutti i campi obbligatori");
 }
 else{
@@ -27,8 +26,12 @@ else{
     $email = cleanInputs($data->email);
     $password = cleanInputs($data->password);
 
+    if(empty($name) || empty($surname) || empty($email) || empty($password)){
+        sendResponse(400,'Non hai inserito tutti i campi obbligatori');
+    }
+
     //Verifica Inputs
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         sendResponse(422,'Email non valida!');
     }
     else if(strlen($password) < 8){
@@ -63,7 +66,7 @@ else{
                         "email" => $email, 
                         "nome" => $name, 
                         "cognome" => $surname,
-                        "display_name" => $name." ".$surname,
+                        "display_name" => $name." ".$surname
                     ]
                 ]);
             }
