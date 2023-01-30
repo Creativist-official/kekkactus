@@ -5,16 +5,16 @@ import { Icon } from "@iconify/react";
 import PropTypes from "prop-types";
 
 const navbarLinks = [
-  { id: 1, to: "", text: "Home", icon: "material-symbols:home-rounded" },
+  { id: 1, to: "/", text: "Home", icon: "material-symbols:home-rounded" },
   {
     id: 2,
-    to: "piante",
+    to: "/piante",
     text: "Giardino",
     icon: "material-symbols:potted-plant-outline",
   },
-  { id: 3, to: "newPianta", text: "Add", icon: "material-symbols:add-rounded" },
-  { id: 4, to: "shop", text: "Shop", icon: "ion:compass-outline" },
-  { id: 5, to: "account", text: "Account", icon: "ant-design:user-outlined" },
+  { id: 3, to: "/newPianta", text: "Add", icon: "material-symbols:add-rounded" },
+  { id: 4, to: "/shop", text: "Shop", icon: "ion:compass-outline" },
+  { id: 5, to: "/account", text: "Account", icon: "ant-design:user-outlined" },
 ];
 
 const SNav = styled.nav`
