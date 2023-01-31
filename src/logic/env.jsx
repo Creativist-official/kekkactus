@@ -1,0 +1,1 @@
+export const backend = import.meta.env.BACKEND || 'http://127.0.0.1:3000';
