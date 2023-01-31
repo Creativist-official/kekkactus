@@ -82,8 +82,7 @@ const WaterTime = styled.span`
 `
 
 const SvgContainer = styled.svg`
-    box-shadow: 7px 5px 0px #000000, -4px 7px 0px #000000;
-
+    filter: drop-shadow(-2px 5px 0px black) drop-shadow(-5px 1px 0 black)
 `
 
 const HomePlant = ({type, name, img}) => {
