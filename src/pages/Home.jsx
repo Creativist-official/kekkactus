@@ -61,7 +61,7 @@ const Home = ({}) => {
    return (
       <HomeContainer>
          <HeaderContainer>
-            <Header leftIcon="bx:gift" rightIcon='mdi:bell-badge-outline' doubleSet={false}/>
+            <Header leftIcon="bx:gift" rightIcon='mdi:bell-badge-outline' doubleSet={false} num={3}/>
             <Title Title="Da innaffiare"/>
             <RelativeContainer>
                <BushImg src="./bush.png" alt="" />

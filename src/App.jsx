@@ -11,6 +11,7 @@ import Garden from "./pages/Garden";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import SingolaPianta from "./pages/SingolaPianta";
 import NewPlant from "./pages/NewPlant";
 
 const App = () => {
@@ -33,12 +34,13 @@ const App = () => {
           />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/garden" element={<Garden />} />
               <Route path="/recover-password" element={<h1>Ricordatela.</h1>} />
               <Route path="/home" element={<Navigate to="/"/>} />
+              <Route path="/piante" element={<SingolaPianta />} />
               <Route path="*" element={<h1>404</h1>} />
               <Route path="/newPlant" element={<NewPlant/>}/>
             </Routes>
