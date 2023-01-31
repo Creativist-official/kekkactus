@@ -10,7 +10,7 @@ const theme = {
     success: "#5CC58C",
     info: "#1B80B2",
     gray: "#5A5A5A",
-    warning: "EFAF42",
+    warning: "#EFAF42",
     light: "#FFFFFF",
     dark: "#000000",
   },
