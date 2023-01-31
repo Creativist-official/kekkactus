@@ -5,7 +5,7 @@
     require __DIR__.'/../../utils/checkInputs.php';
     require __DIR__.'/../../middleware/Auth.php';
     
-    putHeaders("GET");
+    putHeaders("POST");
     
     $db = new Database();
     $conn = $db->connect();
