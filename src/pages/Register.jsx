@@ -17,6 +17,7 @@ import bananoImage from "../assets/decorations/banano.png";
 import { loginUser, registerUser } from "../logic/actions/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 const Flex = styled.div`
   display: flex;
