@@ -5,7 +5,7 @@ require __DIR__."/../utils/checkInputs.php";
 require __DIR__."/../classes/Database.php";
 require __DIR__."/../classes/JWTHandler.php";
 
-putHeaders("POST");
+putHeaders("POST", true);
 
 $db = new Database();
 $conn = $db->connect();
