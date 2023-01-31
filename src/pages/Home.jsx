@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from '../components/Header';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
@@ -8,6 +8,8 @@ import DailyTips from '../components/home/DailyTips';
 import Navbar from '../components/Navbar';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Content = styled.div`
 `;
@@ -47,6 +49,15 @@ const PlantSwiper = styled(Swiper)`
 `
 
 const Home = ({}) => {
+   const navigate = useNavigate();
+   const token = useSelector((state) => state.user.token);
+
+   useEffect(() => {
+      if(!token) {
+         navigate('/login');
+      }
+   }, [token, navigate]);
+
    return (
       <HomeContainer>
          <HeaderContainer>

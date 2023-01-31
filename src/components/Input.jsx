@@ -18,12 +18,14 @@ const InputS = styled.input`
     }
 `;
 
-const Input = ({ placeholder, type }) => {
-   return <InputS placeholder={placeholder} type={type} />;
+const Input = ({ placeholder, type, required=false, autocomplete="on" }) => {
+   return <InputS placeholder={placeholder} type={type} required={required} autocomplete={autocomplete}/>;
 }
 
 Input.prototype = {
     placeholder: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['text', 'email', 'password', "number", "date", "color"]).isRequired,
+    required: PropTypes.bool,
+    autocomplete: PropTypes.oneOf(["on", "off"])
 }
 export default Input;
